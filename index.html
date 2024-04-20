@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Value Calculator</title>
+    <link rel="stylesheet" href="dndgearscorecss.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+        <!-- Dropdowns for each item type -->
+        <label for="helmet">Helmet:</label>
+        <select id="helmet">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <!-- Add dropdowns for other item types -->
+        <label for="hand">Hand:</label>
+        <select id="hand">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="foot">Foot:</label>
+        <select id="foot">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="chest">Chest:</label>
+        <select id="chest">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="leg">Leg:</label>
+        <select id="leg">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="back">Back:</label>
+        <select id="back">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+    </div>
+    <div class="column">
+        <label for="twohanded">Two-Handed:</label>
+        <select id="twohanded">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+    
+        <label for="primary">Primary:</label>
+        <select id="primary">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="secondary">Secondary:</label>
+        <select id="secondary">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="ring">Ring:</label>
+        <select id="ring">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="ring2">Ring2:</label>
+        <select id="ring2">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <label for="necklace">Necklace:</label>
+        <select id="necklace">
+            <option value="none">None</option>
+            <option value="junk">Junk</option>
+            <option value="poor">Poor</option>
+            <option value="white">White</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="unique">Unique</option>
+        </select>
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <!-- Result placeholder -->
+        <div id="result"></div>
+    </div>
+</div>
+
+    <!-- JavaScript for calculating total -->
+    <script>
+        function calculateTotal() {
+            // Get selected values from dropdowns
+            var helmetColor = document.getElementById('helmet').value;
+            var handColor = document.getElementById('hand').value;
+            var footColor = document.getElementById('foot').value;
+            var chestColor = document.getElementById('chest').value;
+            var legColor = document.getElementById('leg').value;
+            var backColor = document.getElementById('back').value;
+            var twohandedColor = document.getElementById('twohanded').value;
+            var primaryColor = document.getElementById('primary').value;
+            var secondaryColor = document.getElementById('secondary').value;
+            var ringColor = document.getElementById('ring').value;
+            var ring2Color = document.getElementById('ring2').value;
+            var necklaceColor = document.getElementById('necklace').value;
+
+            // Define item values
+            var helmetValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+            var handValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+            var footValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+            var chestValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+            var legValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+            var backValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+            var twohandedValues = {"none": 0, "junk": 15, "poor": 22, "white": 30, "green": 45, "blue": 60, "purple": 90, "orange": 120, "unique": 175};
+            var primaryValues = {"none": 0, "junk": 9, "poor": 13, "white": 18, "green": 27, "blue": 36, "purple": 54, "orange": 72, "unique": 125};
+            var secondaryValues = {"none": 0, "junk": 7, "poor": 10, "white": 14, "green": 21, "blue": 28, "purple": 42, "orange": 56, "unique": 100};
+            var ringValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+            var ring2Values = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+            var necklaceValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+
+            // Calculate total
+            var total = helmetValues[helmetColor] + handValues[handColor] + footValues[footColor] + chestValues[chestColor] + legValues[legColor] + backValues[backColor] + twohandedValues[twohandedColor] + primaryValues[primaryColor] + secondaryValues[secondaryColor] + ringValues[ringColor] + ring2Values[ring2Color] + necklaceValues[necklaceColor];
+
+            // Display total
+            document.getElementById('result').innerText = 'Total value: ' + total;
+        }
+    </script>
+</body>
+</html>
