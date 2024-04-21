@@ -8,6 +8,13 @@ body {
     align-items: flex-start; /* Align items to the top */
     height: 100vh;
     background-color: #f4f4f4;
+    background-image: url('dndbg.png');
+    /* Adjust background image properties */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    /* Optionally, set a fallback background color */
+    background-color: rgba(244, 244, 244, 0.2); /* Opacity set to 0.5 (range: 0 to 1) */
 }
 
 .container {
@@ -15,6 +22,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: nowrap; /* Ensure columns don't wrap */
+    
 }
 
 .column1,
@@ -60,6 +68,7 @@ body {
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
+    color: #fff;
 }
 
 /* Adjust spacing between columns */
@@ -67,4 +76,8 @@ body {
 .column2:not(:last-child),
 .column3:not(:last-child) {
     margin-right: 20px;
+}
+
+.label{
+    color: #fff;
 }
