@@ -5,24 +5,32 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     height: 100vh;
     background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px; /* Adjust max-width to fit all columns */
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensure columns don't wrap */
 }
 
-.column {
-    width: 50%;
+.column1,
+.column2,
+.column3 {
     padding: 0 10px; /* Adjust spacing */
+    flex: 0 0 auto; /* Allow columns to shrink and don't grow */
+    width: 33.33%; /* Each column takes 1/3 of the container */
 }
 
-.column select {
+.column1 select,
+.column2 select,
+.column3 select,
+.column1 input[type="text"],
+.column2 input[type="text"],
+.column3 input[type="text"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;
@@ -30,7 +38,9 @@ body {
     border-radius: 5px;
 }
 
-.column button {
+.column1 button,
+.column2 button,
+.column3 button {
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
@@ -40,7 +50,9 @@ body {
     cursor: pointer;
 }
 
-.column button:hover {
+.column1 button:hover,
+.column2 button:hover,
+.column3 button:hover {
     background-color: #45a049;
 }
 
@@ -50,17 +62,9 @@ body {
     text-align: center;
 }
 
-/* Adjusting layout for two columns */
-@media (min-width: 600px) {
-    .container {
-        flex-wrap: nowrap;
-    }
-    
-    .column:nth-child(1) {
-        order: 1;
-    }
-    
-    .column:nth-child(2) {
-        order: 2;
-    }
+/* Adjust spacing between columns */
+.column1:not(:last-child),
+.column2:not(:last-child),
+.column3:not(:last-child) {
+    margin-right: 20px;
 }
