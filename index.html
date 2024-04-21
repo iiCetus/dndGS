@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="column">
+        <div class="column1">
         <!-- Dropdowns for each item type -->
         <label for="helmet">Helmet:</label>
         <select id="helmet">
@@ -86,8 +86,12 @@
             <option value="orange">Orange</option>
             <option value="unique">Unique</option>
         </select>
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <div id="result"></div>
+
     </div>
-    <div class="column">
+    <div class="column2">
         <label for="twohanded">Two-Handed:</label>
         <select id="twohanded">
             <option value="none">None</option>
@@ -165,50 +169,99 @@
             <option value="orange">Orange</option>
             <option value="unique">Unique</option>
         </select>
+    </div>
+        <div class="column3">
+            <label for="utility">Junk utility:</label>
+            <input type="text" id="utility_junk" placeholder="">
 
-        <button onclick="calculateTotal()">Calculate Total</button>
+            <label for="utility">Poor utility:</label>
+            <input type="text" id="utility_poor" placeholder="">
+
+            <label for="utility">White utility:</label>
+            <input type="text" id="utility_white" placeholder="">
+
+            <label for="utility">Green utility:</label>
+            <input type="text" id="utility_green" placeholder="">
+
+            <label for="utility">Blue utility:</label>
+            <input type="text" id="utility_blue" placeholder="">
+
+            <label for="utility">Purple utility:</label>
+            <input type="text" id="utility_purple" placeholder="">
+
+            <label for="utility">Orange utility:</label>
+            <input type="text" id="utility_orange" placeholder="">
+    
+            <label for="utility">Unique utility:</label>
+            <input type="text" id="utility_unique" placeholder="">
+        </div>
+
+
         <!-- Result placeholder -->
-        <div id="result"></div>
     </div>
 </div>
 
     <!-- JavaScript for calculating total -->
     <script>
-        function calculateTotal() {
-            // Get selected values from dropdowns
-            var helmetColor = document.getElementById('helmet').value;
-            var handColor = document.getElementById('hand').value;
-            var footColor = document.getElementById('foot').value;
-            var chestColor = document.getElementById('chest').value;
-            var legColor = document.getElementById('leg').value;
-            var backColor = document.getElementById('back').value;
-            var twohandedColor = document.getElementById('twohanded').value;
-            var primaryColor = document.getElementById('primary').value;
-            var secondaryColor = document.getElementById('secondary').value;
-            var ringColor = document.getElementById('ring').value;
-            var ring2Color = document.getElementById('ring2').value;
-            var necklaceColor = document.getElementById('necklace').value;
+function calculateTotal() {
+    // Get selected values from dropdowns
+    var helmetColor = document.getElementById('helmet').value;
+    var handColor = document.getElementById('hand').value;
+    var footColor = document.getElementById('foot').value;
+    var chestColor = document.getElementById('chest').value;
+    var legColor = document.getElementById('leg').value;
+    var backColor = document.getElementById('back').value;
+    var twohandedColor = document.getElementById('twohanded').value;
+    var primaryColor = document.getElementById('primary').value;
+    var secondaryColor = document.getElementById('secondary').value;
+    var ringColor = document.getElementById('ring').value;
+    var ring2Color = document.getElementById('ring2').value;
+    var necklaceColor = document.getElementById('necklace').value;
 
-            // Define item values
-            var helmetValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
-            var handValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
-            var footValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
-            var chestValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
-            var legValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
-            var backValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
-            var twohandedValues = {"none": 0, "junk": 15, "poor": 22, "white": 30, "green": 45, "blue": 60, "purple": 90, "orange": 120, "unique": 175};
-            var primaryValues = {"none": 0, "junk": 9, "poor": 13, "white": 18, "green": 27, "blue": 36, "purple": 54, "orange": 72, "unique": 125};
-            var secondaryValues = {"none": 0, "junk": 7, "poor": 10, "white": 14, "green": 21, "blue": 28, "purple": 42, "orange": 56, "unique": 100};
-            var ringValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
-            var ring2Values = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
-            var necklaceValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+    // Get utility values from input boxes
+    var utility_junk = parseFloat(document.getElementById('utility_junk').value) || 0;
+    var utility_poor = parseFloat(document.getElementById('utility_poor').value) || 0;
+    var utility_white = parseFloat(document.getElementById('utility_white').value) || 0;
+    var utility_green = parseFloat(document.getElementById('utility_green').value) || 0;
+    var utility_blue = parseFloat(document.getElementById('utility_blue').value) || 0;
+    var utility_purple = parseFloat(document.getElementById('utility_purple').value) || 0;
+    var utility_orange = parseFloat(document.getElementById('utility_orange').value) || 0;
+    var utility_unique = parseFloat(document.getElementById('utility_unique').value) || 0;
 
-            // Calculate total
-            var total = helmetValues[helmetColor] + handValues[handColor] + footValues[footColor] + chestValues[chestColor] + legValues[legColor] + backValues[backColor] + twohandedValues[twohandedColor] + primaryValues[primaryColor] + secondaryValues[secondaryColor] + ringValues[ringColor] + ring2Values[ring2Color] + necklaceValues[necklaceColor];
 
-            // Display total
-            document.getElementById('result').innerText = 'Total value: ' + total;
-        }
+    // Define item values
+    var helmetValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+    var handValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+    var footValues = {"none": 0, "junk": 4, "poor": 6, "white": 8, "green": 12, "blue": 16, "purple": 24, "orange": 32, "unique": 40};
+    var chestValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+    var legValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+    var backValues = {"none": 0, "junk": 5, "poor": 7, "white": 10, "green": 15, "blue": 20, "purple": 30, "orange": 40, "unique": 50};
+    var twohandedValues = {"none": 0, "junk": 15, "poor": 22, "white": 30, "green": 45, "blue": 60, "purple": 90, "orange": 120, "unique": 175};
+    var primaryValues = {"none": 0, "junk": 9, "poor": 13, "white": 18, "green": 27, "blue": 36, "purple": 54, "orange": 72, "unique": 125};
+    var secondaryValues = {"none": 0, "junk": 7, "poor": 10, "white": 14, "green": 21, "blue": 28, "purple": 42, "orange": 56, "unique": 100};
+    var ringValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+    var ring2Values = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+    var necklaceValues = {"none": 0, "green": 9, "blue": 12, "purple": 18, "orange": 24, "unique": 30};
+    var utilityValues = {"junk": 2, "poor": 3, "white": 4, "green": 6, "blue": 8, "purple": 12, "orange": 16, "unique": 20};
+
+    // Calculate total based on selected item values and utility values
+    var total = helmetValues[helmetColor] + handValues[handColor] + footValues[footColor] + chestValues[chestColor] + legValues[legColor] + 
+    backValues[backColor] + twohandedValues[twohandedColor] + primaryValues[primaryColor] + secondaryValues[secondaryColor] + 
+    ringValues[ringColor] + ring2Values[ring2Color] + necklaceValues[necklaceColor];
+
+    // Calculate total utility value based on user input and add it to the total
+    total += utility_junk * utilityValues["junk"];
+    total += utility_poor * utilityValues["poor"];
+    total += utility_white * utilityValues["white"];
+    total += utility_green * utilityValues["green"];
+    total += utility_blue * utilityValues["blue"];
+    total += utility_purple * utilityValues["purple"];
+    total += utility_orange * utilityValues["orange"];
+    total += utility_unique * utilityValues["unique"];
+
+    // Display total
+    document.getElementById('result').innerText = 'Total value: ' + total;
+}
     </script>
 </body>
 </html>
