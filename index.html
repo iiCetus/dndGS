@@ -106,7 +106,7 @@
             <option value="unique">Unique</option>
         </select>
         <label class="label" for="twohanded">Two-Handed:</label>
-        <select id="twohanded">
+        <select id="twohanded2">
             <option value="none">None</option>
             <option value="junk">Junk</option>
             <option value="poor">Poor</option>
@@ -131,7 +131,7 @@
             <option value="unique">Unique</option>
         </select>
         <label class="label" for="primary">Primary:</label>
-        <select id="primary">
+        <select id="primary2">
             <option value="none">None</option>
             <option value="junk">Junk</option>
             <option value="poor">Poor</option>
@@ -156,7 +156,7 @@
             <option value="unique">Unique</option>
         </select>
         <label class="label" for="secondary">Secondary:</label>
-        <select id="secondary">
+        <select id="secondary2">
             <option value="none">None</option>
             <option value="junk">Junk</option>
             <option value="poor">Poor</option>
@@ -249,8 +249,11 @@ function calculateTotal() {
     var legColor = document.getElementById('leg').value;
     var backColor = document.getElementById('back').value;
     var twohandedColor = document.getElementById('twohanded').value;
+    var twohandedColor2 = document.getElementById('twohanded2').value;
     var primaryColor = document.getElementById('primary').value;
+    var primaryColor2 = document.getElementById('primary2').value;
     var secondaryColor = document.getElementById('secondary').value;
+    var secondaryColor2 = document.getElementById('secondary2').value;
     var ringColor = document.getElementById('ring').value;
     var ring2Color = document.getElementById('ring2').value;
     var necklaceColor = document.getElementById('necklace').value;
@@ -283,8 +286,8 @@ function calculateTotal() {
 
     // Calculate total based on selected item values and utility values
     var total = helmetValues[helmetColor] + handValues[handColor] + footValues[footColor] + chestValues[chestColor] + legValues[legColor] + 
-    backValues[backColor] + twohandedValues[twohandedColor] + primaryValues[primaryColor] + secondaryValues[secondaryColor] + 
-    ringValues[ringColor] + ring2Values[ring2Color] + necklaceValues[necklaceColor];
+    backValues[backColor] + twohandedValues[twohandedColor] + twohandedValues[twohandedColor2] + primaryValues[primaryColor] + primaryValues[primaryColor2] + secondaryValues[secondaryColor] + 
+    secondaryValues[secondaryColor2] + ringValues[ringColor] + ring2Values[ring2Color] + necklaceValues[necklaceColor];
 
     // Calculate total utility value based on user input and add it to the total
     total += utility_junk * utilityValues["junk"];
